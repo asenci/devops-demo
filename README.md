@@ -4,7 +4,12 @@
 
 - [x] MVP Docker image
 - [x] Local development environment
-- [ ] CI job to test building the docker image
+- [x] CI job to test building the docker image
+- [ ] Linters
+- [ ] Deployment script
+- [ ] TLS support
+- [ ] Monitoring
+- [ ] CD pipeline
 
 ## Local development with Docker
 
