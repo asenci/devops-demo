@@ -34,15 +34,12 @@ Download and install Docker Desktop from: https://www.docker.com/products/docker
 
 On Windows use the WSL 2 backend.
 
-#### Terraform
-
-Download and install Terraform from: https://developer.hashicorp.com/terraform/downloads
-
 #### AWS IAM credentials
 
 Create a set of IAM credentials with the `AdministratorAccess` policy attached.
 
 Create a `.env.local` file inside the `terraform` directory with the AWS credentials as environment variables.
+
 This can be achieved by running:
 
 ```shell
@@ -70,11 +67,11 @@ Outputs:
 deploy-url = "http://xxxxxxxxxxxx.elb.amazonaws.com"
 ```
 
-If you get an error regarding the `.env.local` file, or the AWS provider configuration, please review the
+If you get an error regarding the `.env.local` file or the AWS provider configuration, please review the
 [AWS IAM credentials](#aws-iam-credentials) section and make sure the contents of your `.env.local` file match your credentials.
 E.g.
-```shell
-cat terraform/.env.local
+```
+$ cat terraform/.env.local
 AWS_ACCESS_KEY_ID='XXXXXXXXXXXXXXXXX'
 AWS_SECRET_ACCESS_KEY='YYYYYYYYYYYYYYYYY'
 ```
@@ -100,7 +97,8 @@ To destroy all resources created by the application:
 docker compose run --rm terraform destroy
 ```
 
-Please review all changes carefully as this operation can not be reverted.
+Please review all changes carefully as **this operation can not be reverted**.
+
 To accept the changes, type `yes` and press ENTER.
 
 ## Local development with Docker
@@ -115,7 +113,7 @@ On Windows use the WSL 2 backend.
 
 ### Starting
 
-To start the development environment:
+To start the development environment (press CTRL+C to stop):
 
 ```shell
 docker compose up
