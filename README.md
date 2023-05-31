@@ -1,29 +1,5 @@
 # DevOps Demo
 
-## Pending
-
-- [x] MVP Docker image
-- [x] Local development environment
-- [x] CI job to test building the docker image
-- [x] Deployment script
-- [ ] Proper image versioning
-- [ ] Add kubectl to compose.yaml
-- [x] Document Terraform operation
-- [ ] Document K8S operation
-- [x] Restrict access to the ECR repository
-- [ ] Create new VPC for K8S control and data planes
-- [ ] Tighten up security groups
-- [ ] Document minimal AWS IAM access required for Terraform
-- [ ] Add linters to the CI pipeline
-- [ ] TLS support
-- [ ] Monitoring
-- [ ] CD pipeline
-- [ ] Auto-scaling
-- [ ] Health-checks
-- [x] Customisable deployment parameters
-- [ ] Use K8S ingress instead of service
-- [ ] Refactor Terraform into modules and add more variables for customisation
-
 ## Deploying with Terraform
 
 ### Dependencies
@@ -54,13 +30,14 @@ EOF
 To deploy the application:
 
 ```shell
+docker compose run --rm terraform init
 docker compose run --rm terraform apply -auto-approve
 ```
 
 After completing the deployment process, Terraform will output the deployment URL. E.g:
 
 ```terraform
-Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
+Apply complete! Resources : 45 added, 0 changed, 0 destroyed.
 
 Outputs:
 
