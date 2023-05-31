@@ -1,4 +1,19 @@
 services:
+  terraform:
+    profiles:
+      - dev tools
+    image: hashicorp/terraform:${TERRAFORM_VERSION:-latest}
+    environment:
+      TF_PLUGIN_CACHE_DIR: /plugin-cache
+      AWS_REGION: ap-southeast-2
+    env_file:
+      - terraform/.env.local
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ~/.terraform.d/plugin-cache:/plugin-cache
+      - .:/app
+    working_dir:
+      /app/terraform
   web:
     build: .
     ports:
